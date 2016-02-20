@@ -18,5 +18,4 @@ SCHEDULER.every '60s' do
     puts account["meta"]["name"]
     puts "Account Balance: $" + String(account["balance"]["available"])
   end
-
-en
+end
