@@ -1,3 +1,5 @@
+
+<input id="clickMe" type="button" value="clickme" onclick="doFunction();" />
 <% content_for :title do %>My super sweet dashboard<% end %>
 <div class="gridster">
   <ul>
@@ -25,3 +27,34 @@
     </li>
   </ul>
 </div>
+
+
+<script type = 'text/javascript'>
+  $(function self(){
+    var recognition = new webkitSpeechRecognition();
+
+    recognition.continuous = false;
+    recognition.interimResults = false;
+
+    recognition.lang = "en-US";
+    recognition.start();
+
+    recognition.onresult = function (e) {
+        document.getElementById('clickMe').value
+            = e.results[0][0].transcript;
+        recognition.stop();
+        recognition.clearData();
+      };
+    recognition.onend = function(e) {
+    recognition.clear;
+    recognition.start();
+    };
+
+
+    recognition.onerror = function (e) {
+      //recognition.stop();
+    }
+
+  })
+</script>
+
