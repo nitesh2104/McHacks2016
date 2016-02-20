@@ -5,7 +5,7 @@ require 'json'
 # The url you are tracking
 sharedlink = URI::encode('facebook.com/McGillUniversity/')
 
-# SCHEDULER.every '5s' do
+SCHEDULER.every '5s' do
   fbstat = []
 
   http = Net::HTTP.new('graph.facebook.com')
@@ -17,5 +17,4 @@ sharedlink = URI::encode('facebook.com/McGillUniversity/')
   end
 
    send_event('fblinkstat', { items: fbstat })
-# end
-puts fbstat
+end

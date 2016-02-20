@@ -1,30 +1,39 @@
-
+<script type='text/javascript'>
+  $(function() {
+    $('li').live('click', function(e){
+      var widget = $(this).find('.widget');
+      var url = widget.data('url');
+      window.location = url;
+    });
+  });
+</script>
 <input id="clickMe" type="button" value="clickme" onclick="doFunction();" />
 <% content_for :title do %>My super sweet dashboard<% end %>
 <div class="gridster">
   <ul>
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-      <div data-id="welcome" data-view="Text" data-title="Hello" data-text="This is your shiny new dashboard." data-moreinfo="Protip: You can drag the widgets around!"></div>
+    <li data-row="1" data-col="1" data-sizex="4" data-sizey="1">
+      <div data-id="welcome" data-view="Text" data-title="Personal Dashboard" data-text="Welcome to your Personal Dashboard" data-moreinfo="Feel free to look around!!!"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="synergy" data-view="Meter" data-title="Synergy" data-min="0" data-max="100"></div>
-    </li>
-
-    <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="fblinkstat" data-view="List" data-unordered="true" data-title="FB link stats" data-moreinfo="for Facebook links"></div>
-      <i class="icon-facebook icon-background"></i>
-    </li>
-
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+    <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
       <div data-id="bank-balance" data-view="Number" data-title="Current Valuation" data-moreinfo="" data-prefix="$"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
-      <div data-id="google-calendar" data-view="GoogleCalendar" data-title="Convergence" style="background-color:#ff9618"></div>
-    </li>
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+    <li data-row="2" data-col="3" data-sizex="2" data-sizey="1">
       <div data-id="forecast" data-view="Forecast" data-title="Weather Forecast" ></div>
+    </li>
+
+    <li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="chuck" data-view="Text" data-title="Team Facts" data-moreinfo="Team Member Facts."></div>
+    </li>
+
+    <li data-row="3" data-col="3" data-sizex="2" data-sizey="1">
+      <div data-id="fblinkstat" data-view="List" data-unordered="true" data-title="FB link stats" data-url="https://www.facebook.com/McGillUniversity"  data-moreinfo="for Facebook links"></div>
+      <i class="icon-facebook icon-background"></i>
+    </li>
+
+    <li data-row="4" data-col="1" data-sizex="4" data-sizey="1">
+      <div data-id="google-calendar" data-view="GoogleCalendar" data-title="Convergence" style="background-color:#ff9618" data-url="https://calendar.google.com/calendar/render?pli=1#main_7"></div>
     </li>
   </ul>
 </div>
