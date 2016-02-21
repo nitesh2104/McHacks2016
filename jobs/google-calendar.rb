@@ -52,6 +52,7 @@ SCHEDULER.every '10s', :first_in => 4 do |job|
                                           'singleEvents' => 'true',
                                           'maxResults' => 6})  # How many calendar items to get
 
+  puts result.data
   send_event('google_calendar', { events: result.data })
 
 end
