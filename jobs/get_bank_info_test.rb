@@ -2,7 +2,7 @@ require "net/http"
 require "uri"
 require "json"
 
-SCHEDULER.every '60s' do
+SCHEDULER.every '10s' do
 
   url = URI.parse('https://tartan.plaid.com/connect')
   req = Net::HTTP::Post.new(url.request_uri)
@@ -16,8 +16,9 @@ SCHEDULER.every '60s' do
   #   puts "Account Balance: $" + String(account["balance"]["available"])
   # end
 
-  account_name = json["accounts"].at(0)["meta"]["name"] + " Account"
-  account_balance = json["accounts"].at(0)["balance"]["available"]
+  #account_name = json["accounts"].at(0)["meta"]["name"] + " Account"
+  account_name = "Personal Saving Account"
+  account_balance = json["accounts"].at(1)["balance"]["available"]
 
   send_event("bank-balance", title: account_name, current: account_balance)
 end
