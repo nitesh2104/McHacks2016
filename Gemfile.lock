@@ -159,6 +159,3 @@ DEPENDENCIES
   google-api-client (>= 0.8)
   plaid
   twitter (>= 5.9.0)
-
-BUNDLED WITH
-   1.11.2

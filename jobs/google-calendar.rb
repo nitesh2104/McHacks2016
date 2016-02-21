@@ -11,7 +11,7 @@ require 'json'
 
 # Update these to match your own apps credentials
 service_account_email = 'mchacks2016-1227@appspot.gserviceaccount.com' # Email of service account
-key_file = '/home/earnite/Documents/mchacks2016/mchacks2016-76ed377af40c.p12' # File containing your private key
+key_file = 'mchacks2016-76ed377af40c.p12' # File containing your private key
 key_secret = 'notasecret' # Password to unlock private key
 calendarID = 'e442i872l147sa6rppdgk8a2m8@group.calendar.google.com' # Calendar ID.
 
@@ -34,7 +34,7 @@ client.authorization = Signet::OAuth2::Client.new(
     :signing_key => key)
 
 # Start the scheduler
-SCHEDULER.every '15m', :first_in => 4 do |job|
+SCHEDULER.every '10s', :first_in => 4 do |job|
 
   # Request a token for our service account
   client.authorization.fetch_access_token!
