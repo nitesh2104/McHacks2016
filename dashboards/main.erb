@@ -70,6 +70,10 @@
         win.focus();
         setTimeout(function(){win.close()}, 5000);
       }
+
+      if (String(result) == "refresh"){
+        location.reload();
+      }
       };
     recognition.onend = function(e) {
     recognition.clear;
