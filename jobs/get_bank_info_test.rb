@@ -2,7 +2,7 @@ require "net/http"
 require "uri"
 require "json"
 
-SCHEDULER.every '10s' do
+SCHEDULER.every '60s' do
 
   url = URI.parse('https://tartan.plaid.com/connect')
   req = Net::HTTP::Post.new(url.request_uri)
