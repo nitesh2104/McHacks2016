@@ -56,8 +56,19 @@
         recognition.clear;
 
       if (String(result) == "weather"){
+        result = ""
         console.log("weather detected")
-        location.href = "http://Forecast.io";
+        var win = window.open("http://forecast.io", '_blank');
+        win.focus();
+        setTimeout(function(){win.close()}, 5000);
+      }
+
+      if (String(result) == "Facebook"){
+        result = ""
+        console.log("weather detected")
+        var win = window.open("https://www.facebook.com/McGillUniversity", 'blank');
+        win.focus();
+        setTimeout(function(){win.close()}, 5000);
       }
       };
     recognition.onend = function(e) {
